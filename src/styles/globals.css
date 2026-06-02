@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans antialiased;
+    overflow: hidden;
+  }
+
+  :root {
+    --background: #F0FDFA;
+    --surface: #FFFFFF;
+    --surface-elevated: #FFFFFF;
+    --border: #CCFBF1;
+    --primary: #0D9488;
+    --primary-hover: #0F766E;
+    --primary-light: #CCFBF1;
+    --secondary: #14B8A6;
+    --accent: #EA580C;
+    --accent-hover: #D05A0A;
+    --success: #059669;
+    --warning: #D97706;
+    --danger: #DC2626;
+    --info: #0284C7;
+    --text-primary: #134E4A;
+    --text-secondary: #4B5563;
+    --text-muted: #9CA3AF;
+  }
+}
+
+@layer components {
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .status-badge-actif {
+    @apply bg-success/10 text-success;
+  }
+
+  .status-badge-inactif {
+    @apply bg-gray-100 text-text-secondary;
+  }
+
+  .status-badge-suspendu {
+    @apply bg-warning/10 text-warning;
+  }
+
+  .status-badge-en_attente {
+    @apply bg-warning/10 text-warning;
+  }
+
+  .status-badge-approuve {
+    @apply bg-success/10 text-success;
+  }
+
+  .status-badge-refuse {
+    @apply bg-danger/10 text-danger;
+  }
+
+  .status-badge-expire {
+    @apply bg-danger/10 text-danger;
+  }
+
+  .status-badge-termine {
+    @apply bg-gray-100 text-text-secondary;
+  }
+
+  .status-badge-brouillon {
+    @apply bg-gray-100 text-text-secondary;
+  }
+
+  .status-badge-valide {
+    @apply bg-success/10 text-success;
+  }
+
+  .status-badge-paye {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .status-badge-resilie {
+    @apply bg-danger/10 text-danger;
+  }
+}
+
+.dark {
+  --background: #0f172a;
+  --surface: #1e293b;
+  --surface-elevated: #1e293b;
+  --border: #334155;
+  --primary: #14b8a6;
+  --primary-hover: #0d9488;
+  --primary-light: rgba(13, 148, 136, 0.15);
+  --secondary: #2dd4bf;
+  --accent: #f97316;
+  --accent-hover: #ea580c;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #38bdf8;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+}
+
+.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #0f172a !important;
+}

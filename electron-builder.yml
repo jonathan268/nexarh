@@ -1,0 +1,33 @@
+appId: com.nexarh.app
+productName: NexaRH
+copyright: Copyright © 2024 NexaRH
+
+directories:
+  output: dist-installer
+  buildResources: resources
+
+files:
+  - out/**/*
+  - node_modules/**/*
+  - package.json
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: resources/icon.png
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: NexaRH
+  displayLanguageSelector: false
+  language: 1036
+  uninstallDisplayName: NexaRH
+
+asar: true
+asarUnpack:
+  - node_modules/better-sqlite3/**/*
