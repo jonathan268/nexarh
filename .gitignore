@@ -29,3 +29,10 @@ npm-debug.log*
 # Electron
 dist-installer/
 paie_*.pdf
+
+# Landing page (Next.js)
+landing/.next/
+landing/out/
+landing/node_modules/
+landing/package-lock.json
+landing/next-env.d.ts

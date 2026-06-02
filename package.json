@@ -14,7 +14,7 @@
     "db:migrate": "drizzle-kit push:sqlite",
     "db:seed": "tsx electron/database/seed.ts",
     "typecheck": "tsc --noEmit",
-    "postinstall": "electron-rebuild -f -w better-sqlite3"
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "@electron-toolkit/utils": "^4.0.0",
