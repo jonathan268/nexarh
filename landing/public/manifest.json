@@ -1,0 +1,16 @@
+{
+  "name": "NexaRH - Logiciel de Gestion RH",
+  "short_name": "NexaRH",
+  "description": "Logiciel de gestion des ressources humaines tout-en-un : employés, contrats, paie, congés, stages, formations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
