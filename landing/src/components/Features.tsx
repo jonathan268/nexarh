@@ -1,12 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
 import {
   Users, FileText, CalendarDays, Banknote,
   GraduationCap, BookOpen, UserCheck, Bell,
   ShieldCheck, Database, Download, Printer
 } from 'lucide-react'
+import Reveal from './Reveal'
 
 const features = [
   {
@@ -72,22 +72,8 @@ const features = [
 ]
 
 export default function Features() {
-  const ref = useRef<HTMLElement>(null)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.1 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section id="features" ref={ref} className="py-24 lg:py-32 bg-white">
+    <section id="features" className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-sm font-medium mb-4">
@@ -103,20 +89,17 @@ export default function Features() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, i) => (
-            <div
-              key={feature.title}
-              className={cn(
-                'group p-6 rounded-2xl border border-gray-100 hover:border-brand-100 hover:shadow-lg hover:shadow-brand-50/50 transition-all duration-300',
-                visible && 'animate-slide-up'
-              )}
-              style={{ animationDelay: `${i * 60}ms`, animationFillMode: 'both' }}
-            >
-              <div className="w-12 h-12 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center mb-4 transition-colors">
-                <feature.icon className="w-6 h-6 text-brand-600" />
+            <Reveal key={feature.title} delay={i * 60}>
+              <div className={cn(
+                'group p-6 rounded-2xl border border-gray-100 hover:border-brand-100 hover:shadow-lg hover:shadow-brand-50/50 transition-all duration-300'
+              )}>
+                <div className="w-12 h-12 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center mb-4 transition-colors">
+                  <feature.icon className="w-6 h-6 text-brand-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -6,17 +6,18 @@ import DownloadSection from '@/components/DownloadSection'
 import Installation from '@/components/Installation'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
+import Reveal from '@/components/Reveal'
 
 export default function Home() {
   return (
     <>
       <Header />
       <Hero />
-      <Features />
-      <CTA />
-      <DownloadSection />
-      <Installation />
-      <FAQ />
+      <Reveal><Features /></Reveal>
+      <Reveal><CTA /></Reveal>
+      <Reveal><DownloadSection /></Reveal>
+      <Reveal><Installation /></Reveal>
+      <Reveal><FAQ /></Reveal>
       <Footer />
     </>
   )
