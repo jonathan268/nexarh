@@ -15,8 +15,8 @@ export default function Hero() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-28 text-center">
         <div className="space-y-8">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-white">
-            Gérez vos RH avec
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-300">
+            Gérez vos RH avec{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-300">
               puissance & simplicité
             </span>
           </h1>

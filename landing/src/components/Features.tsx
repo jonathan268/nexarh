@@ -91,10 +91,10 @@ export default function Features() {
           {features.map((feature, i) => (
             <Reveal key={feature.title} delay={i * 60}>
               <div className={cn(
-                'group p-6 rounded-2xl border border-gray-100 hover:border-brand-100 hover:shadow-lg hover:shadow-brand-50/50 transition-all duration-300'
+                'group p-6 rounded-2xl border border-gray-100 hover:border-brand-100 hover:shadow-lg hover:shadow-brand-50/50 transition-all duration-300 hover:scale-[1.03]'
               )}>
-                <div className="w-12 h-12 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center mb-4 transition-colors">
-                  <feature.icon className="w-6 h-6 text-brand-600" />
+                <div className="w-12 h-12 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                  <feature.icon className="w-6 h-6 text-brand-600 transition-all duration-300 group-hover:scale-110" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
