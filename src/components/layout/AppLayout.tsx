@@ -3,12 +3,14 @@ import Sidebar from './Sidebar'
 import TopBar from './TopBar'
 import { useUiStore } from '../../stores/ui.store'
 import { Toaster } from 'sonner'
+import UpdateBanner from '../update/UpdateBanner'
 
 export default function AppLayout() {
   const { sidebarOpen } = useUiStore()
 
   return (
     <div className="h-screen flex flex-col bg-background">
+      <UpdateBanner />
       <TopBar />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />

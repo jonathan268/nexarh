@@ -157,6 +157,34 @@ export interface ElectronAPI {
   internPdf: {
     generateCertificate: (internId: number) => Promise<IpcResponse<string>>
   }
+  update: {
+    check: () => Promise<IpcResponse<UpdateCheckResult>>
+    download: () => Promise<IpcResponse<void>>
+    install: () => Promise<IpcResponse<void>>
+    on: (channel: string, callback: (...args: unknown[]) => void) => () => void
+  }
+}
+
+export interface UpdateCheckResult {
+  updateInfo: UpdateInfo
+  cancellationToken: unknown
+}
+
+export interface UpdateInfo {
+  version: string
+  files: Array<{ url: string; size: number; sha512: string }>
+  path: string
+  sha512: string
+  releaseDate: string
+  releaseName?: string
+  releaseNotes?: string
+}
+
+export interface UpdateProgress {
+  bytesPerSecond: number
+  percent: number
+  total: number
+  transferred: number
 }
 
 export interface AuditEntry {

@@ -6,6 +6,11 @@ directories:
   output: dist-installer
   buildResources: resources
 
+publish:
+  provider: github
+  owner: jonathan268
+  repo: nexarh
+
 files:
   - out/**/*
   - node_modules/**/*

@@ -167,6 +167,16 @@ const electronAPI = {
   internPdf: {
     generateCertificate: (internId: number) =>
       ipcRenderer.invoke('internPdf:generateCertificate', internId)
+  },
+  update: {
+    check: () => ipcRenderer.invoke('update:check'),
+    download: () => ipcRenderer.invoke('update:download'),
+    install: () => ipcRenderer.invoke('update:install'),
+    on: (channel: string, callback: (...args: unknown[]) => void) => {
+      const listener = (_event: Electron.IpcRendererEvent, ...args: unknown[]) => callback(...args)
+      ipcRenderer.on(channel, listener)
+      return () => { ipcRenderer.removeListener(channel, listener) }
+    }
   }
 }
 

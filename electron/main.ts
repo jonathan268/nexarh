@@ -5,6 +5,7 @@ import { registerIpcHandlers } from './ipc'
 import { NotificationService } from './services/NotificationService'
 import { seedFormations } from './services/SeedService'
 import { BackupScheduler } from './services/BackupScheduler'
+import { setUpdateWindow } from './ipc/update.ipc'
 
 let mainWindow: BrowserWindow | null = null
 
@@ -15,6 +16,7 @@ app.whenReady().then(async () => {
   NotificationService.scanAndGenerate()
   BackupScheduler.start()
   mainWindow = createWindow()
+  setUpdateWindow(mainWindow)
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {

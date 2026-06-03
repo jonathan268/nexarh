@@ -21,6 +21,7 @@ import { registerInscriptionIpc } from './inscription.ipc'
 import { registerPaiementIpc } from './paiement.ipc'
 import { registerFormationPdfIpc } from './formationPdf.ipc'
 import { registerInternPdfIpc } from './internPdf.ipc'
+import { registerUpdateIpc } from './update.ipc'
 
 export function registerIpcHandlers(): void {
   registerAuthIpc()
@@ -45,6 +46,7 @@ export function registerIpcHandlers(): void {
   registerPaiementIpc()
   registerFormationPdfIpc()
   registerInternPdfIpc()
+  registerUpdateIpc()
 }
 
 export type IpcResponse<T> =
