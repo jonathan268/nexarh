@@ -42,6 +42,7 @@ export default function DownloadSection() {
 
         for (const a of assets) {
           const name = a.name.toLowerCase()
+          if (name.includes('.blockmap') || name.endsWith('.yml')) continue
           if (name.includes('.exe') || name.includes('setup')) found.windows = a.browser_download_url
           else if (name.includes('.dmg')) found.mac = a.browser_download_url
           else if (name.includes('appimage')) found.linux = a.browser_download_url
