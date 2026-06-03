@@ -1,6 +1,6 @@
 {
   "name": "nexarh",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "NexaRH - Logiciel de Gestion RH Desktop",
   "author": "NexaRH Team",
   "main": "./out/main/index.js",
