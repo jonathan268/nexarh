@@ -5,18 +5,18 @@ import { z } from 'zod'
 const CreateEmployeeSchema = z.object({
   firstName: z.string().min(1),
   lastName: z.string().min(1),
-  email: z.string().email().optional().or(z.literal('')),
-  phone: z.string().optional(),
-  address: z.string().optional(),
-  dateOfBirth: z.string().optional(),
-  gender: z.string().optional(),
-  nationalId: z.string().optional(),
-  positionId: z.number().optional(),
-  departmentId: z.number().optional(),
+  email: z.string().email().optional().nullable().or(z.literal('')),
+  phone: z.string().optional().nullable(),
+  address: z.string().optional().nullable(),
+  dateOfBirth: z.string().optional().nullable(),
+  gender: z.string().optional().nullable(),
+  nationalId: z.string().optional().nullable(),
+  positionId: z.number().optional().nullable(),
+  departmentId: z.number().optional().nullable(),
   hireDate: z.string().min(1),
   employmentType: z.string().default('CDI'),
   baseSalary: z.number().positive(),
-  bankAccount: z.string().optional()
+  bankAccount: z.string().optional().nullable()
 })
 
 export function registerEmployeeIpc(): void {
